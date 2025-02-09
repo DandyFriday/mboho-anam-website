@@ -1,42 +1,159 @@
-// import React from "react";
+// //import React from "react";
+// import React, { useState, useEffect } from "react";
+// import { useNavigate } from "react-router-dom";
+// import { assets } from "../assets/assets";
+
+// const Leadership = () => {
+
+//   const [animate, setAnimate] = useState(false);
+  
+
+
+//   const navigate = useNavigate();
+
+//   const cards = [
+//     {
+//       id: 1,      
+//       // color: "bg-yellow2",
+//       caption: "Board Of Trustees (BOT)",
+//       imgSrc: assets.Sir_Udo3,
+//       path: "/bot", // Path for navigation
+//     },
+//     {
+//       id: 2,      
+//       // color: "bg-primary",
+//       caption: "National Executive Committee (NEC)",
+//       imgSrc: assets.Nat_excos,
+//       path: "/nec", // Path for navigation
+//     },
+//     {
+//       id: 3,      
+//       // color: "bg-yellow2",
+//       caption: "General Members",
+//       imgSrc: assets.gen_member,
+//       path: "/members", // Path for navigation
+//     },
+//   ];
+
+
+//   useEffect(() => {
+//     const timer = setTimeout(() => setAnimate(true), 100);
+//     return () => clearTimeout(timer);
+//   }, []);
+
+
+//   return (
+//     <div>
+//       <h1 className="flex items-center justify-center py-8 text-primary text-[4rem]">
+//         Leadership Structure of the Mboho Anam
+//       </h1>
+
+//       <div className="flex flex-wrap justify-between items-center w-full px-36">
+//         {cards.map((card) => (
+//            <div
+//            key={card.id}
+//            onClick={() => navigate(card.path)}
+//            className={`relative flex flex-col w-[30%] h-[20rem] shadow-lg cursor-pointer overflow-hidden transform ${
+//              animate ? "scale-80" : "scale-80"
+//            } transition-transform duration-1000 ease-in-out`}
+//            style={{
+//              backgroundImage: `url(${card.imgSrc})`,
+//              backgroundSize: "cover",
+//              backgroundPosition: "center",
+//            }}
+//          >
+//           {/* Background Color Overlay */}
+//           <div
+//               // className={`absolute inset-0 ${card.color} opacity-75`}
+//           ></div>          
+
+//             {/* Text Content */}
+//             <div className="relative text-center py-[8rem] text-yellow2">
+//               <h2 className="text-3xl font-semibold mb-[6rem]  font-stylish">
+//                 {card.caption}
+//               </h2>
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Leadership;
+
+
+
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { assets } from "../assets/assets";
 
 const Leadership = () => {
-  const cards = [
-    { id: 1, letter: "MBO", color: "bg-yellow2", caption: "Board Of Trustees (BOT)",  imgSrc: assets.Dr_Ikim },
-    { id: 2, letter: "HO", color: "bg-light", caption: "National Executive Committee (NEC)", imgSrc: assets.Sir_Udo },
-    { id: 3, letter: "ANAM", color: "bg-yellow2", caption: "Members", imgSrc: assets.gen_member },
+  const [animate, setAnimate] = useState(false);
+  const navigate = useNavigate();
 
+  const cards = [
+    {
+      id: 1,
+      caption: "Board Of Trustees (BOT)",
+      imgSrc: assets.Sir_Udo3,
+      path: "/bot",
+    },
+    {
+      id: 2,
+      caption: "National Executive Committee (NEC)",
+      imgSrc: assets.Nat_excos,
+      path: "/nec",
+    },
+    {
+      id: 3,
+      caption: "General Members",
+      imgSrc: assets.gen_member,
+      path: "/members",
+    },
   ];
 
+  useEffect(() => {
+    const timer = setTimeout(() => setAnimate(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div>
-          <h1 className="flex items-center justify-center py-8 text-primary text-[4rem]">
-            Leadership Structure of the Mboho Anam
-        </h1>
-    
-    <div className="flex flex-wrap justify-between items-center w-full px-36">
-      
-      {cards.map((card) => (
-        <div
-          key={card.id}
-          className={`relative flex flex-col justify-end items-center w-[33.33%] h-64 shadow-lg px-8 ${card.color} text-dark p-5`}
-        >
-          {/* Large Letter Background */}
-          <span className="absolute inset-0 flex justify-center items-center text-[7.5rem] font-extrabold font-stylish opacity-25 pb-8">
-            {card.letter}
-          </span>
-          
-          {/* Text Content */}
-          <div className="relative text-center py-15 text-white">
-            <h2 className="text-3xl font-semibold mb-2 font-stylish">{card.caption}</h2>
-          
+    <div className="py-6">
+      <h1 className="flex items-center justify-center py-8 text-primary text-[4rem]">
+        Leadership Structure of the Mboho Anam
+      </h1>
+
+      <div className="flex flex-wrap justify-between items-center w-full px-36">
+        {cards.map((card, index) => (
+          <div
+            key={card.id}
+            onClick={() => navigate(card.path)}
+            className={`relative flex flex-col w-[30%] h-[20rem] shadow-lg cursor-pointer overflow-hidden transform transition-all duration-1000 ease-in-out 
+              ${animate ? "opacity-100 scale-100" : "opacity-0 scale-75"} delay-${index * 300}`}
+            style={{
+              backgroundImage: `url(${card.imgSrc})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            {/* Text Content */}
+            <div className="relative text-center py-[8rem] text-yellow2">
+              <h2 className="text-3xl font-semibold mb-[6rem] font-stylish">
+                {card.caption}
+              </h2>
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
     </div>
   );
 };
 
 export default Leadership;
+
+
+
+
+
+

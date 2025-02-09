@@ -45,14 +45,14 @@ const ContactPage = () => {
 
 
     return(
-        <main className="center flex-col w-full pt-[20vh] pb-[10vh] bg-white">
-            <div className="w-11/12 lg:w-10/12 center flex-col gap-9 text-primary">
+        <main className=" flex-col lg:flex-row pt-[20vh] pb-[6vh] bg-white">
+            <div className="w-11/12 lg:w-10/12 flex flex-col gap-9 text-primary">
                 <div className="flex flex-col gap-3 text-center">
                     <h1 className="font-bold text-4xl">
                         Contact Us
                     </h1>
                     <p className="text-gray-700">
-                        Any question or remarks? Just write us a message
+                    Any question or remarks? Just write us a message
                     </p>
                 </div>
 

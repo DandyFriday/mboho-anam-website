@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import { ContactInfoInterface, FooterLinksInterface } from "../assets/store/Interfaces"
 import { BiEnvelope } from "react-icons/bi"
 import { RiInstagramFill, RiLinkedinFill } from "react-icons/ri"
+import { assets } from "../assets/assets"
 
 const icons = [
     <FaFacebookF />,
@@ -16,7 +17,7 @@ const FooterLinks = [
   
     {
         header: "Company",
-        links: ["Contact us", "Careers", "Culture", "Blog"]
+        links: ["Contact us", "Careers", "Culture"]
     },
     {
         header: "Support",
@@ -24,7 +25,7 @@ const FooterLinks = [
     },
     {
         header: "Legal",
-        links: ["Privacy Policy", "User Terms of Use", "Payments & Pricing policy", "Cookies & Data Privacy"]
+        links: ["Privacy Policy", "User Terms of Use", "Payments", "Cookies & Data Privacy"]
     },
 ]
 
@@ -46,17 +47,31 @@ export const ContactInfo = [
 
 const Footer = () => {
     return(
-        <footer className="w-full bg-primary pt-[8vh] pb-[0vh] lg:py-[14vh] px-[4rem]">
-            <div className="w-11/12 lg:w-11/12 flex flex-col gap-6 text-gray-200">
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-6 md:gap-9">
+        <div className="w-full bg-primary px-[4rem] pt-20">
+            <div className="w-11/12 lg:w-11/12 flex flex-col gap-4 text-gray-200">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-4 md:gap-6">
 
-                    <div className="flex flex-col gap-4 col-span-2">
-                        <h2 className="text-3xl text-orange text-opacity-100">Mboho Anam</h2>
+                    <div className="flex flex-col gap-6 col-span-3">
+                    <div className="mb-[-12rem] mt-[-4rem]">
+                            <h1 className="flex items-center justify-center pb-[4rem]">
+                                <a href="/">
+                                    <img
+                                        className="h-[10rem] pb-16 pt-[3rem] w-[20px] md:w-full "
+                                        src={assets.logo_web}
+                                        alt="logo"
+                                    />
+                                </a>                               
+                            </h1>
+
+                        </div> 
+                        <h2 className="text-3xl font-extrabold text-white font-stylish text-opacity-100">
+                            Mboho Anam
+                        </h2>                        
                         <p>Our bursary exercise is to promote diligence and hard work amongst the students of Anam.</p>
                         <div className="flex gap-3 items-center ">
                             {
                                 icons.map((icon : JSX.Element, i) => (
-                                    <div key={i} className="text-xl lg:text-2xl text-orange cursor-pointer">
+                                    <div key={i} className="text-xl lg:text-2xl text-white hover:text-yellow2 cursor-pointer">
                                         {icon}
                                     </div>
                                 ))
@@ -68,7 +83,7 @@ const Footer = () => {
                     {
                         FooterLinks.map((link : FooterLinksInterface, i) => (
                             <div key={i} className="flex flex-col gap-4 w-full">
-                                <h3 className="text-orange py-4 font-semibold text-lg">{link.header}</h3>
+                                <h3 className="text-white font-bold py-4 font-stylish text-lg">{link.header}</h3>
 
                                 <div className="flex flex-col gap-4 text-sm text-gray-200">
                                     {
@@ -87,7 +102,7 @@ const Footer = () => {
                 <div className="flex flex-col flex-wrap md:flex-row gap-3 lg:items-center my-3 lg:my-0">
                     {
                         ContactInfo.map((info: ContactInfoInterface, i) => (
-                            <div key={i} className="flex items-center gap-2 text-orange">
+                            <div key={i} className="flex items-center gap-2 hover:text-yellow2">
                                 {info.icon}
 
                                 <a href="">{info.contact}</a>
@@ -99,10 +114,11 @@ const Footer = () => {
                 <div className="justify-between items-center flex flex-col lg:flex-row gap-3">
                     <p className="w-full lg:w-fit">Copyright © 2024 Engr. Dandy George & Co</p>
 
-                    <p className="w-full lg:w-fit">All Rights Reserved | <span className="underlin text-orange">Terms and Conditions</span> | <span className="underline">Privacy Policy</span> </p>
+                    <p className="w-full lg:w-fit">All Rights Reserved | <span className="underlin text-yellow2">Terms and Conditions</span> | <span className="underline">Privacy Policy</span> </p>
                 </div>
+                
             </div>
-        </footer>
+        </div>
     )
 }
 

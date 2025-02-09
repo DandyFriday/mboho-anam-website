@@ -7,8 +7,8 @@ const Neighbourhood = () => {
   return (
     <div className='bg-white min-h-screen'>
         <div className='flex items-center shadow-lg'>
-            <div className='px-14 w-full flex mt-20 pb-4'>
-              <img src={assets.gallery} alt="" className="w-[33rem] h-[30rem] rounded-t-full border-primary-100 border-2 "/>
+            <div className='px-14 w-full flex mt-20 pb-8'>
+              <img src={assets.gallery} alt="" className="w-[34rem] h-[34rem] rounded-t-[9rem] "/>
 
             </div>
             <div className='text-orange flex flex-col pt-8 items-end justify-end gap-4 w-full pl-3'>

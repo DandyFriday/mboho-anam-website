@@ -6,12 +6,27 @@ export default {
   ],
   theme: {
     extend: {
+
+      animation: {
+        bgTransition: 'bgTransition 5s infinite', // Animation name and duration
+      },
+      keyframes: {
+        bgTransition: {
+          '0%': { backgroundSize: '120%' },
+          '50%': { backgroundSize: '140%' },
+          '100%': { backgroundSize: '120%' },
+        },
+      },
+
       fontFamily: {
         stylish: ['"Playfair Display"', 'serif'],
       },
       colors: {
         "primary" : "#0d4823",
         "orange":'#ff8832',
+        "orange2":'#ff4d00',
+        "navy-blue":'#000435',
+        "arsenal_red": '#ef0107',
         "yellow": '#fcb900', 
         "yellow2": "#ff6900",       
         "secondary": "#e67817",        
