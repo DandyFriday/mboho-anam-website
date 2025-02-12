@@ -1,165 +1,3 @@
-// import React, { useState } from "react";
-// import { assets } from "../assets/assets";
-// import { BsSearch } from "react-icons/bs";
-// import { MdOutlineClose } from "react-icons/md";
-// import { FiMenu } from "react-icons/fi";
-// import { Link } from "react-router-dom";
-// import { SlArrowDown } from "react-icons/sl";
-
-// type DropdownItems = Record<string, string[]>;
-
-// const navLinks = [
-//   { name: "Home", to: "/" },
-//   { name: "About", to: "/about" },
-//   { name: "Contact", to: "/contact" },
-//   { name: "Members", to: "/members", Dropdown: true },
-//   { name: "Media", to: "/media", Dropdown: true },
-//   { name: "Beneficiaries", to: "/student_forum", Dropdown: true },
-// ];
-
-// const dropdownItems: DropdownItems = {
-//   Members: ["Board of Trustees(BOT)", "National Executive", "General Members"],
-//   Media: ["News", "Photos", "Videos", "Event"],
-//   Beneficiaries: ["Students in Section", "Graduated Students", "Others"],
-// };
-
-// const Navbar: React.FC = () => {
-//   const [isOpen, setIsOpen] = useState(false);
-//   const currentRoute = window.location.pathname;
-
-//   return (
-//     <div className="w-full bg-white h-[90px] fixed shadow-lg z-50">
-//       <div className="flex justify-between items-center h-full px-8">
-//         {/* Logo Section */}
-//         <h1 className="flex items-center justify-center px-2">
-//           <a href="/">
-//             <img
-//               className="h-[12rem] mt-[0rem] pb-16 pt-[3rem] w-[20px] px-3 md:w-full"
-//               src={assets.logo1}
-//               alt="logo"
-//             />
-//           </a>
-//           <span className="text-primary font-bold text-lg">MBOHO ANAM</span>
-//         </h1>
-
-//         {/* Navigation Links */}
-//         <ul className="hidden md:flex items-center gap-3">
-//           {navLinks.map(({ name, to, Dropdown }) => (
-//             <li
-//               key={name + to}
-//               className={` relative group text-${
-//                 currentRoute === to ? "yellow2" : "primary"
-//               }hover:text-yellow2`}
-//             >
-//               <Link to={to} className="flex items-center">
-//                 {name}
-//                 {Dropdown && <SlArrowDown className="text-lg ml-1 pt-1" />}
-//               </Link>
-//               {Dropdown && (
-//                 <ul className="absolute hidden group-hover:block bg-white shadow-md rounded-md w-48 p-2 z-10 border-t-4 border-orange">
-//                   {dropdownItems[name]?.map((item, index) => (
-//                     <li
-//                       key={`${name}-${index}`}
-//                       className="hover:bg-primary hover:text-white p-2 rounded-md text-sm"
-//                     >
-//                       <a href="#">{item}</a>
-//                     </li>
-//                   ))}
-//                 </ul>
-//               )}
-//             </li>
-//           ))}
-//         </ul>
-
-//         {/* Search and Apply Section */}
-//         <div className="hidden md:flex items-center pl-16 gap-4">
-//           <div>
-//             <input
-//               className="text-primary rounded-lg border-2 shadow-lg border-opacity-20 px-2 border-primary focus:border-orange focus:outline-none"
-//               placeholder="Search..."
-//             />
-//           </div>
-//           <div>
-//             <BsSearch className="text-primary hover:text-orange" />
-//           </div>
-//           <Link to="/Form">
-//             <button className="bg-yellow2 w-[70px] h-9 flex items-center justify-center rounded-lg text-white p-2 hover:bg-primary">
-//               Apply
-//             </button>
-//           </Link>
-//         </div>
-
-//         {/* Mobile Menu Toggle */}
-//         <div className="pl-[20rem] md:hidden">
-//           {isOpen ? (
-//             <MdOutlineClose
-//               className="text-primary font-bold text-xl w-8"
-//               onClick={() => setIsOpen(false)}
-//             />
-//           ) : (
-//             <FiMenu
-//               className="text-primary font-bold text-xl w-8"
-//               onClick={() => setIsOpen(true)}
-//             />
-//           )}
-//         </div>
-//       </div>
-
-//       {/* Mobile Menu Content */}
-//       {isOpen && (
-//         <div className="bg-light px-4 absolute w-full">
-//           <ul className="md:hidden flex flex-col items-start gap-3">
-//             {navLinks.map(({ name, to, Dropdown }) => (
-//               <li
-//                 key={name + to}
-//                 className={`hover:text-yellow2 text-${
-//                   currentRoute === to ? "yellow2" : "primary"
-//                 }`}
-//               >
-//                 <Link to={to}>{name}</Link>
-//                 {Dropdown && (
-//                   <ul className="pl-4">
-//                     {dropdownItems[name]?.map((item, index) => (
-//                       <li
-//                         key={`${name}-${index}`}
-//                         className="hover:bg-primary hover:text-white p-2 rounded-md text-sm"
-//                       >
-//                         <a href="#">{item}</a>
-//                       </li>
-//                     ))}
-//                   </ul>
-//                 )}
-//               </li>
-//             ))}
-//           </ul>
-//           <div className="mt-4 md:hidden flex items-start gap-4">
-//             <div>
-//               <input
-//                 className="rounded-lg border-[rgba(0,0,0,0.5)] shadow-lg border-secondary focus:border-orange focus:outline-none"
-//                 placeholder="Search..."
-//               />
-//             </div>
-//             <div className="text-primary">
-//               <BsSearch />
-//             </div>
-//             <Link to="/Form">
-//               <button className="bg-yellow2 w-[70px] rounded-lg text-white p-2">
-//                 Apply
-//               </button>
-//             </Link>
-//           </div>
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default Navbar;
-
-
-
-
-
 import React, { useState } from "react";
 import { assets } from "../assets/assets";
 import { BsSearch } from "react-icons/bs";
@@ -241,11 +79,11 @@ const Navbar: React.FC = () => {
             placeholder="Search..."
           />
           <BsSearch className="text-primary hover:text-orange" />
-          <Link to="/Form">
+          {/* <Link to="/Form">
             <button className="bg-yellow2 w-[70px] h-9 flex items-center justify-center rounded-lg text-white p-2 hover:bg-primary">
               Apply
             </button>
-          </Link>
+          </Link> */}
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -302,11 +140,11 @@ const Navbar: React.FC = () => {
               placeholder="Search..."
             />
             <BsSearch className="text-primary" />
-            <Link to="/Form">
+            {/* <Link to="/Form">
               <button className="bg-yellow2 w-[70px] rounded-lg text-white p-2">
                 Apply
               </button>
-            </Link>
+            </Link> */}
           </div>
         </div>
       )}
