@@ -165,21 +165,21 @@ const Form = () => {
         </div>
 
         {/* Institution and Reg No */}        
-        <div className="flex items-center  justify-evenly gap-6">
+        <div className="flex px-20 items-center  justify-evenly gap-6">
         <input type="text" placeholder="Name / Address of Institution" className="border-b-2 border-black3  hover:border-primary outline-none w-[28rem] py-2"/>
           <input type="text" placeholder="Reg No" className=" border-b-2 border-black3  hover:border-primary outline-none py-2 w-[14rem]" />
           <input type="text" placeholder="Programme" className="flex-1 border-b-2 border-black3  hover:border-primary outline-none py-2 w-[14rem]" />
         </div>
 
         {/* Department, Admission Year, Year of Study */}
-        <div className="flex space-x-4">
+        <div className="flex px-20 pb-4">
           <input type="text" placeholder="Department" className="border-b-2 border-black3  hover:border-primary outline-none w-full py-2 flex-1" />
           <input type="text" placeholder="Year of Admission" className="border-b-2 border-black3  hover:border-primary outline-none w-[18rem] py-2flex-1" />
           <input type="text" placeholder="Year of Study" className="border-b-2 border-black3  hover:border-primary outline-none w-[10rem] py-2 flex-1" />
         </div>
 
         
-        <fieldset className="border-2 border-arsenal_red rounded-3xl ">
+        <fieldset className="border-2 border-arsenal_red rounded-3xl py-4 ">
           <div className="px-6">
             <h2 className="px-[24rem] text-arsenal_red font-extrabold text-3xl ">DECLARATION BY STUDENT</h2>
             <p className="text-1xl font-serif py-2">I <input className="border-b-2 border-black3  hover:border-primary outline-none w-[24rem] pt-4 pb-[-4px]"/> hereby declare that I am currently a student of the aforementioned institution. <br/>I accept that my application be rejected if any of the information given by me in this form is found to be false.
@@ -188,8 +188,8 @@ const Form = () => {
         </fieldset>
 
         {/* File Upload Section */}
-        <fieldset className="flex px-4 items-center">
-          <legend className="text-[14px] text-primary font-bold  w-full "><b className=" text-navy-blue text-2xl font-extrabold font-serif px-[28rem]">Upload Required Documents</b><br/><h2><span className="flex text-arsenal_red text-2xl font-bold">Note:</span> Student Attestation Letter sholud be written using Departmental Letter Head capturing the following:<br/>
+        <fieldset className="flex px-4 items-center p-4">
+          <legend className="text-[14px] text-primary font-bold  w-full pb-2 "><b className=" text-navy-blue text-2xl font-extrabold font-serif px-[28rem] ">Upload Required Documents</b><br/><h2><span className="flex text-arsenal_red text-2xl font-bold">Note:</span> Student Attestation Letter sholud be written using Departmental Letter Head capturing the following:<br/>
           <ul className="text-arsenal_red">
             <li>Name of HOD</li>
             <li>Student Name</li>
