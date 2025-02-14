@@ -1,13 +1,13 @@
 // import React from "react";
-import { assets } from "../assets/assets";
+// import { assets } from "../assets/assets";
 
 const Card = () => {
   const cards = [
-    { id: 1, letter: "M", color: "bg-yellow2", caption: "Motivation", description: "Empowering students through motivation.", imgSrc: assets.Dr_Ikim },
-    { id: 2, letter: "B", color: "bg-primary", caption: "Bursary", description: "Providing financial aid for education.", imgSrc: assets.Sir_Udo },
-    { id: 3, letter: "O", color: "bg-yellow2", caption: "Opportunity", description: "Creating opportunities for growth.", imgSrc: assets.gen_member },
-    { id: 4, letter: "H", color: "bg-primary", caption: "Hope", description: "Building a brighter future with hope.", imgSrc: assets.gameboy_office },
-    { id: 5, letter: "O", color: "bg-yellow2", caption: "Organization", description: "A united effort for student success.", imgSrc: assets.dan },
+    { id: 1, letter: "M", color: "bg-yellow2", caption: "Motivation", description: "Empowering students through motivation." },
+    { id: 2, letter: "B", color: "bg-primary", caption: "Bursary", description: "Providing financial aid for education."},
+    { id: 3, letter: "O", color: "bg-yellow2", caption: "Opportunity", description: "Creating opportunities for growth." },
+    { id: 4, letter: "H", color: "bg-primary", caption: "Hope", description: "Building a brighter future with hope." },
+    { id: 5, letter: "O", color: "bg-yellow2", caption: "Organization", description: "A united effort for student success."},
   ];
 
   return (

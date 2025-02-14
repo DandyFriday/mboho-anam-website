@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import { button } from "../Interfaces"
+import { button } from "../assets/store/Interfaces"
 import { FC } from "react"
 
 

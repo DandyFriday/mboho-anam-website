@@ -54,13 +54,13 @@ const Form = () => {
       setPassport(imageUrl);
     }
   };
-
-  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>, field: string) => {
-         const file = event.target.files?.[0];
-         setUploadedFiles((prev) => ({ ...prev, [field]: file }));
-     };
-
-
+  const handleFileUpload = (
+    event: React.ChangeEvent<HTMLInputElement>, 
+    field: string
+  ) => {
+    const file = event.target.files?.[0] || null; // Ensure a valid value is assigned
+    setUploadedFiles((prev) => ({ ...prev, [field]: file }));
+  };
   return (
     <div className="py-[5rem] relative min-h-screen">
       {/* Header Section */}
